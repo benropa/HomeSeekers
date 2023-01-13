@@ -5,13 +5,14 @@
 .container1 {
     background-color: rgb(0, 0, 0);
     color: white;
-    height: 150px;
+    height: 180px;
     display: flex;
     align-items: center;
     justify-content:space-around;
-    padding-top: 15px;
-    border-color: grey;
-   
+    padding-top: 75px;
+    padding-bottom: 10px;
+    width: 100%;
+    font-size: 50px;
 }
 
 #image1 {
@@ -36,3 +37,32 @@
     border-radius: 50%;
 }
 
+.container2 {
+    background-color: rgb(0, 127, 104);
+    color: white;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 50px;
+}
+
+.container3 {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 50px;
+    flex-wrap: wrap;
+}
+
+.boxes {
+    background-color: rgb(255, 255, 255);
+    width: 200px;
+    height: 150px;
+    color: black;
+}
