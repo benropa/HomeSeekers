@@ -7,6 +7,8 @@ var animalArr=[[]];
 var animalPhoto = [[]];
 var pf = new petfinder.Client({apiKey: key, secret: secretKey});
 
+const cardOneName = document.getElementById('cardOneName');
+
 function findOrganizations() {
     pf.organization.search({location: zipCode})
         .then(resp => {
@@ -56,10 +58,11 @@ function findAnimal() {
                     animalPhoto[i][2] = response.data.animals[i].photos[0].large;
                 }
             }
+            cardOneName.textContent = animalArr[2][1];
         })
         .catch(function (error) {
             // Handle the error
-        });
+        }); 
 }
 
 findOrganizations();
