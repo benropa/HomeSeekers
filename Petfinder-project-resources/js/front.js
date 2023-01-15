@@ -7,6 +7,10 @@ var animalArr=[[]];
 var animalPhoto = [[]];
 var pf = new petfinder.Client({apiKey: key, secret: secretKey});
 
+const zipInput = document.getElementById('zipInput');
+const zipBtn = document.getElementById('zipBtn');
+const cardOneName = document.getElementById('cardOneName');
+
 function findOrganizations() {
     pf.organization.search({location: zipCode})
         .then(resp => {
@@ -64,3 +68,9 @@ function findAnimal() {
 
 findOrganizations();
 findAnimal();
+
+zipBtn.addEventListener('click', function() {
+    zipCode = zipInput.value;
+    findOrganizations();
+    findAnimal();
+})
