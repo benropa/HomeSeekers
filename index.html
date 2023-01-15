@@ -2,31 +2,74 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Petfinder-project-resources/Css/Front.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./Petfinder-project-resources/Css/Front.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <title>Document</title>
 </head>
 
 
-
 <body>
-    <header>
-        <h1 class="container1">
-            <img id="image2" src="./Petfinder-project-resources/Images/Dog1.jpg" alt="This is a cat" />
-            Home Seekers 🐾
-            <img id="image1" src="./Petfinder-project-resources/Images/Dog2.jpg" alt="This is a dog" />
-        </h1>
-        <h2 class="" id="headerTitle">header</h2>
-    </header>
-    <section class="holder">
-        <section class="circle"></section>
+  <header>
+    <h1 class="container1">
+      <img id="image2" src="./Petfinder-project-resources/Images/Dog1.jpg" alt="This is a cat" />
+      Locate-a-Pet 🐾
+      <img id="image1" src="./Petfinder-project-resources/Images/Dog2.jpg" alt="This is a dog" />
+    </h1>
+  </header>
 
-    </section>
+  <div class="container2">
+    <button id="navbar" class="js-modal-trigger" data-target="modal-js-example">
+      About Us
+    </button>
+    <button id="zipcodesearch">
+      zip code search
+    </button>
+    <div class="buttoncontainer">
+      <button id="dog">
+        Dogs
+      </button>
+      <button id="cat">
+        Cats
+      </button>
+      <button id="other">
+        Other
+      </button>
+    </div>
+  </div>
+
+  <footer class="updated">
+ 
+  </footer>
+
+  <div>
+    <div class="image3"> 
+      <div class="textbox">Recently Made Available for Adoption:</div>
+      <section class="containerCenter">
+        <div class="boxes" id="cardOneName">Rocky</div>
+        <div class="boxes" id="cardTwoName">Paula</div>
+      </section>
+      <section class="containerCenter">
+        <div class="boxes" id="cardThreeName">Buster</div>
+        <div class="boxes" id="cardFourName">Silver</div>
+      </section>
+    </div>
+  </div>
+
+  <footer class="footer1">
+    View More Pets!
+  </footer>
+  <footer class="footer2">
+    Resources
+  </footer>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://unpkg.com/@petfinder/petfinder-js/dist/petfinder.min.js"></script>
+        <script src="./Petfinder-project-resources/js/front.js"></script>
 </body>
 
 
 </html>
 
-<script type="javascript" src="./Petfinder-project-resources/js/front.js">
+
