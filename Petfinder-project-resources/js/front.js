@@ -60,10 +60,11 @@ function findAnimal() {
                     animalPhoto[i][2] = response.data.animals[i].photos[0].large;
                 }
             }
+            cardOneName.textContent = animalArr[2][1];
         })
         .catch(function (error) {
             // Handle the error
-        });
+        }); 
 }
 
 findOrganizations();
