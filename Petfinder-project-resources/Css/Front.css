@@ -38,9 +38,18 @@
     height: 68px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 100%;
     font-size: 50px;
+}
+
+#zipInput {
+    height: 20px;
+    width: 200px;
+}
+
+#zipBtn {
+    color: blue;
 }
 
 #navbar {

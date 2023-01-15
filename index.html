@@ -21,12 +21,10 @@
   </header>
 
   <div class="container2">
-    <button id="navbar" class="js-modal-trigger" data-target="modal-js-example">
-      About Us
-    </button>
-    <button id="zipcodesearch">
-      zip code search
-    </button>
+      <div id="zipInput">
+        <input class="input" type="text" placeholder="Text input">
+      </div>
+    <button id="zipBtn">Enter</button>
     <div class="buttoncontainer">
       <button id="dog">
         Dogs
@@ -61,9 +59,12 @@
   <footer class="footer1">
     View More Pets!
   </footer>
-  <footer class="footer2">
+  <footer class="footer2"> <button id="navbar" class="js-modal-trigger" data-input="modal-js-example">
+    About Us
+  </button>
     Resources
   </footer>
+  
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://unpkg.com/@petfinder/petfinder-js/dist/petfinder.min.js"></script>
         <script src="./Petfinder-project-resources/js/front.js"></script>
