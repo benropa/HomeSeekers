@@ -71,6 +71,11 @@ findAnimal();
 
 zipBtn.addEventListener('click', function() {
     zipCode = zipInput.value;
-    findOrganizations();
-    findAnimal();
-})
+
+    if(zipCode == null) {
+        zipInput.textContent = "Invalid Zip Code";
+    } else {
+        findOrganizations();
+        findAnimal();
+    }
+});
