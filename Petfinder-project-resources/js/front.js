@@ -50,6 +50,8 @@ function findAnimal() {
                 animalArr[i][3] = response.data.animals[i].gender;
                 animalArr[i][4] = response.data.animals[i].breeds.primary;
                 animalArr[i][5] = response.data.animals[i].species;
+                animalArr[i][6] = response.data.animals[i].size;
+                animalArr[i][7] = response.data.animals[i].age;
                 if(response.data.animals[i].photos[0] === undefined) {
                     animalPhoto[i][0] = 'no animal photo';
                     animalPhoto[i][1] = 'no animal photo';
