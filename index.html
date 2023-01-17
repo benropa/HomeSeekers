@@ -15,16 +15,21 @@
   <header>
     <h1 class="container1">
       <img id="image2" src="./Petfinder-project-resources/Images/Dog1.jpg" alt="This is a cat" />
-      Locate-a-Pet 🐾
+      Home Seekers 🐾
       <img id="image1" src="./Petfinder-project-resources/Images/Dog2.jpg" alt="This is a dog" />
     </h1>
   </header>
 
   <div class="container2">
-      <div id="zipInput">
-        <input class="input" type="text" placeholder="Text input">
-      </div>
-    <button id="zipBtn">Enter</button>
+    <div id="zipRequest">
+      Zip Code:
+    </div>
+    <div id="zipInput">
+      <input class="input" type="text" placeholder="55555">
+    </div>
+    <div id="zipBtn">
+      <button type="submit">Enter</button>
+    </div>
     <div class="buttoncontainer">
       <button id="dog">
         Dogs
@@ -39,19 +44,23 @@
   </div>
 
   <footer class="updated">
- 
+
   </footer>
 
   <div>
-    <div class="image3"> 
+    <div class="image3">
       <div class="textbox">Recently Made Available for Adoption:</div>
       <section class="containerCenter">
-        <div class="boxes" id="cardOneName">Rocky</div>
-        <div class="boxes" id="cardTwoName">Paula</div>
+        <div class="boxes" id="cardOneName" id="animalOneSpecies/Breed" id="animalOneGender" id="animalOneAge"
+          id="animalOneSize">Rocky</div>
+        <div class="boxes" id="cardTwoName" id="animalTwoSpecies/Breed" id="animalTwoGender" id="animalTwoAge"
+          id="animalTwoSize">Paula<a href="/Users/ben/Desktop/modules/groupproject1/petDisplay.html" target="_blank" color="black">-View</a></div>
       </section>
       <section class="containerCenter">
-        <div class="boxes" id="cardThreeName">Buster</div>
-        <div class="boxes" id="cardFourName">Silver</div>
+        <div class="boxes" id="cardThreeName" id="animalThreeSpecies/Breed" id="animalThreeGender" id="animalThreeAge"
+          id="animalThreeSize">Buster</div>
+        <div class="boxes" id="cardFourName" id="animalFourSpecies/Breed" id="animalFourGender" id="animalFourAge"
+          id="animalFourSize">Silver</div>
       </section>
     </div>
   </div>
@@ -60,17 +69,20 @@
     View More Pets!
   </footer>
   <footer class="footer2"> <button id="navbar" class="js-modal-trigger" data-input="modal-js-example">
-    About Us
-  </button>
-    Resources
+      About Us
+    </button>
+    <button id="navbar" class="js-modal-trigger" data-input="modal-js-example">
+      Contact Us
+    </button>
+    <button id="navbar" class="js-modal-trigger" data-input="modal-js-example">
+      Social Media
+    </button>
   </footer>
-  
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="https://unpkg.com/@petfinder/petfinder-js/dist/petfinder.min.js"></script>
-        <script src="./Petfinder-project-resources/js/front.js"></script>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/@petfinder/petfinder-js/dist/petfinder.min.js"></script>
+  <script src="./Petfinder-project-resources/js/front.js"></script>
 </body>
 
 
 </html>
-
-

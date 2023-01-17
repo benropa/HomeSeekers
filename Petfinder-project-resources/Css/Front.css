@@ -2,17 +2,20 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+a:active {
+    color: black;
+}
+
 .container1 {
     background-image: url(../Images/joe-woods-4Zaq5xY5M_c-unsplash.jpg);
     color: rgb(0, 0, 0);
-    height: 180px;
+    height: 220px;
     display: flex;
     align-items: center;
     justify-content:space-around;
-    padding-top: 75px;
-    padding-bottom: 10px;
+    padding-bottom: 1px;
     width: 100%;
-    font-size: 60px;
+    font-size: 70px;
 
 }
 
@@ -43,13 +46,30 @@
     font-size: 50px;
 }
 
+#zipRequest {
+    background-color: black;
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    font-size: 20px;
+    padding: 10px;
+}
+
 #zipInput {
-    height: 20px;
+    border-radius: 4px;
+    height: 50px;
     width: 200px;
+    padding-top: 5px;
 }
 
 #zipBtn {
-    color: blue;
+    color: rgb(0, 0, 0);
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+#zipBtn:hover {
+    color: rgb(0, 89, 255)
 }
 
 #navbar {
@@ -155,6 +175,8 @@
     border-style:solid;
     border: 2px;
     border-color:  rgb(0, 0, 0);
+    font-size: 30px;
+    align-items: flex-end;
     
 }
 
@@ -214,7 +236,25 @@
     border: 2px solid;
 }
 
-@media (max-width:700px) {
+@media (max-width:867px) {
 .container1 {
-    flex-wrap:wrap-reverse;
+    font-size: 60px;
+    display: block;
 }
+#image1 {
+    visibility: hidden;
+    height: 1px;
+    width: 1px;
+}
+#image2 {
+    height: 1px;
+    width: 1px;
+    visibility: hidden;
+}
+}
+
+@media (max-width:800px) {
+    #zipRequest {
+        font-size: 10px;
+    }
+    }
