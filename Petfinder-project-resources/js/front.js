@@ -1,5 +1,6 @@
 var key = 'Qpx9Cdz8eRObJnAZROa9eqV3JYgxfplkHml99RcBeHrf2E2xkD';
 var secretKey = 'NSrjHbC9pfQcTciGAIOIsICgMRtQO3Q4h34XdMIt';
+var url = href="./petDisplay.html?id=";
 var zipCode = 54311;
 var orgInfo = [[]];
 var orgPhoto = [[]];
@@ -7,9 +8,16 @@ var animalArr=[[]];
 var animalPhoto = [[]];
 var pf = new petfinder.Client({apiKey: key, secret: secretKey});
 
-const zipInput = document.getElementById('zipInput');
+const zipInput = document.getElementById('inputZip');
 const zipBtn = document.getElementById('zipBtn');
-const cardOneName = document.getElementById('cardOneName');
+const cards = [[document.getElementById('cardOneName'), document.getElementById('animalOneSpecies/Breed'), 
+        document.getElementById('animalOneGender'), document.getElementById('animalOneAge'), document.getElementById('animalOneSize')],
+        [document.getElementById('cardTwoName'), document.getElementById('animalTwoSpecies/Breed'), 
+        document.getElementById('animalTwoGender'), document.getElementById('animalTwoAge'), document.getElementById('animalTwoSize')],
+        [document.getElementById('cardThreeName'), document.getElementById('animalThreeSpecies/Breed'), 
+        document.getElementById('animalThreeGender'), document.getElementById('animalThreeAge'), document.getElementById('animalThreeSize')],
+        [document.getElementById('cardFourName'), document.getElementById('animalFourSpecies/Breed'), 
+        document.getElementById('animalFourGender'), document.getElementById('animalFourAge'), document.getElementById('animalFourSize')]];
 
 function findOrganizations() {
     pf.organization.search({location: zipCode})
@@ -62,11 +70,27 @@ function findAnimal() {
                     animalPhoto[i][2] = response.data.animals[i].photos[0].large;
                 }
             }
-            cardOneName.textContent = animalArr[2][1];
+            save();
+
+            for(var i = 0; i < cards.length; i++) {
+                cards[i][0].setAttribute("value", animalArr[i][0]);
+                cards[i][0].textContent = animalArr[i][1];
+                cards[i][1].textContent = animalArr[i][5] + " / " + animalArr[i][4];
+                cards[i][2].textContent = animalArr[i][3];
+                cards[i][3].textContent = animalArr[i][7];
+                cards[i][4].textContent = animalArr[i][6];
+            }
         })
         .catch(function (error) {
             // Handle the error
         }); 
+}
+
+function save() {
+    localStorage.setItem('orgInfo', orgInfo);
+    localStorage.setItem('orgPhoto', orgPhoto);
+    localStorage.setItem('animalArr', animalArr);
+    localStorage.setItem('animalPhoto', animalPhoto);
 }
 
 findOrganizations();
