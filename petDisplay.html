@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./Group5Project/Petfinder-project-resources/Css/petDisplay.css">
+  <link rel="stylesheet" href="./Petfinder-project-resources/Css/petDisplay.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <title>Document</title>
 </head>
@@ -13,11 +13,12 @@
 
 <body>
   <header class="container1">
-    <div id="returnTo">Return to Main Page</div>
-    <div id="meet">Meet</div>
-  <div id="petName">
-    "________"
-  </div>
+    <div id="returnTo" ><a href="/Users/ben/Desktop/modules/groupproject1/Group5Project/index.html">Return to Main Page</a></div>
+    <div id="meet">Meet ${id="petName"}</div>
+  <label class="checkbox">
+    <input type="checkbox">
+    Favorite This Pet
+  </label>
 </header>
 
   <footer class="updated">
@@ -29,23 +30,18 @@
       <div class="textbox"></div>
       <section class="containerCenter">
         <div class="boxes" id="cardOneName" id="animalOneSpecies/Breed" id="animalOneGender" id="animalOneAge"
-          id="animalOneSize">Rocky</div>
+          id="animalOneSize">Rocky
+      <div> The dog (Canis familiaris[4][5] or Canis lupus familiaris[5]) is a domesticated descendant of the wolf. Also called the domestic dog, it is derived from the extinct Pleistocene wolf,[6][7] and the modern wolf is the dog's nearest living relative.[8] Dogs were the first species to be domesticated[9][8] by hunter-gatherers over 15,000 years ago[7] before the development of agriculture.[1] Due to their long association with humans, dogs have expanded to a large number of domestic individuals[10] and gained the ability to thrive on a starch-rich diet that would be inadequate for other canids.[11]
+
+       </div>
+        </div>
+          
       </section>
     </div>
   </div>
 
   <footer class="footer1">
     View More Pets!
-  </footer>
-  <footer class="footer2"> <button id="navbar" class="js-modal-trigger" data-input="modal-js-example">
-      About Us
-    </button>
-    <button id="navbar" class="js-modal-trigger" data-input="modal-js-example">
-      Contact Us
-    </button>
-    <button id="navbar" class="js-modal-trigger" data-input="modal-js-example">
-      Social Media
-    </button>
   </footer>
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
