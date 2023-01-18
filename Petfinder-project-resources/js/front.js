@@ -81,6 +81,7 @@ function findAnimal() {
 
             for(var i = 0; i < cards.length; i++) {
                 cards[i][0].setAttribute("value", animalArr[i][0]);
+                cards[i][0].setAttribute("style", "background-image: url(" + animalPhoto[i][0] + ");");
                 cards[i][1].textContent = animalArr[i][1];
                 cards[i][2].textContent = animalArr[i][5] + " / " + animalArr[i][4];
                 cards[i][3].textContent = animalArr[i][3];
