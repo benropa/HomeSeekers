@@ -1,5 +1,6 @@
 var key = 'Qpx9Cdz8eRObJnAZROa9eqV3JYgxfplkHml99RcBeHrf2E2xkD';
 var secretKey = 'NSrjHbC9pfQcTciGAIOIsICgMRtQO3Q4h34XdMIt';
+var url = href="./petDisplay.html?id=";
 var zipCode = 54311;
 var orgInfo = [[]];
 var orgPhoto = [[]];
@@ -7,9 +8,16 @@ var animalArr=[[]];
 var animalPhoto = [[]];
 var pf = new petfinder.Client({apiKey: key, secret: secretKey});
 
-const zipInput = document.getElementById('zipInput');
+const zipInput = document.getElementById('inputZip');
 const zipBtn = document.getElementById('zipBtn');
-const cardOneName = document.getElementById('cardOneName');
+const cards = [[document.getElementById('cardOne'), document.getElementById('animalOneName'), document.getElementById('animalOneSpeciesBreed'), 
+        document.getElementById('animalOneGender'), document.getElementById('animalOneAge'), document.getElementById('animalOneSize')],
+        [document.getElementById('cardTwo'), document.getElementById('animalTwoName'), document.getElementById('animalTwoSpeciesBreed'), 
+        document.getElementById('animalTwoGender'), document.getElementById('animalTwoAge'), document.getElementById('animalTwoSize')],
+        [document.getElementById('cardThree'), document.getElementById('animalThreeName'), document.getElementById('animalThreeSpeciesBreed'), 
+        document.getElementById('animalThreeGender'), document.getElementById('animalThreeAge'), document.getElementById('animalThreeSize')],
+        [document.getElementById('cardFour'), document.getElementById('animalFourName'), document.getElementById('animalFourSpeciesBreed'), 
+        document.getElementById('animalFourGender'), document.getElementById('animalFourAge'), document.getElementById('animalFourSize')]];
 
 function findOrganizations() {
     pf.organization.search({location: zipCode})
@@ -62,11 +70,34 @@ function findAnimal() {
                     animalPhoto[i][2] = response.data.animals[i].photos[0].large;
                 }
             }
-            cardOneName.textContent = animalArr[2][1];
+            save();
+            
+            /*cards[0][0].setAttribute("value", animalArr[0][0]);
+            cards[0][0].textContent = animalArr[0][1];
+            cards[0][1].textContent = animalArr[0][5] + " / " + animalArr[0][4];
+            cards[0][2].textContent = animalArr[0][3];
+            cards[0][3].textContent = animalArr[0][7];
+            cards[0][4].textContent = animalArr[0][6];*/
+
+            for(var i = 0; i < cards.length; i++) {
+                cards[i][0].setAttribute("value", animalArr[i][0]);
+                cards[i][1].textContent = animalArr[i][1];
+                cards[i][2].textContent = animalArr[i][5] + " / " + animalArr[i][4];
+                cards[i][3].textContent = animalArr[i][3];
+                cards[i][4].textContent = animalArr[i][7];
+                cards[i][5].textContent = animalArr[i][6];
+            }
         })
         .catch(function (error) {
             // Handle the error
         }); 
+}
+
+function save() {
+    localStorage.setItem('orgInfo', orgInfo);
+    localStorage.setItem('orgPhoto', orgPhoto);
+    localStorage.setItem('animalArr', animalArr);
+    localStorage.setItem('animalPhoto', animalPhoto);
 }
 
 findOrganizations();
@@ -76,9 +107,15 @@ zipBtn.addEventListener('click', function() {
     zipCode = zipInput.value;
 
     if(zipCode == null) {
-        zipInput.textContent = "Invalid Zip Code";
+        zipInput.setAttribute(placeholder, "Invalid Zip Code");
     } else {
         findOrganizations();
         findAnimal();
     }
+});
+
+$('.boxes').on('click', function(event) {
+    event.preventDefault();
+    var url = './petDisplay.html?animalID=' + event.target.parentElement.attributes.value.nodeValue;
+    window.location.href = url;
 });
