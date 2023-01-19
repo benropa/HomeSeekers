@@ -42,6 +42,8 @@ function findOrganizations() {
                     orgPhoto[i][2]=resp.data.organizations[i].photos[0].large;
                 }
             }
+            save('orgInfo', orgInfo);
+            save('orgPhoto', orgPhoto);
         });
 }
 
@@ -70,7 +72,8 @@ function findAnimal() {
                     animalPhoto[i][2] = response.data.animals[i].photos[0].large;
                 }
             }
-            save();
+            save('animalArr', animalArr);
+            save('animalPhoto', animalPhoto);
 
             for(var i = 0; i < cards.length; i++) {
                 cards[i][0].setAttribute("value", animalArr[i][0]);
@@ -87,11 +90,8 @@ function findAnimal() {
         }); 
 }
 
-function save() {
-    localStorage.setItem('orgInfo', orgInfo);
-    localStorage.setItem('orgPhoto', orgPhoto);
-    localStorage.setItem('animalArr', animalArr);
-    localStorage.setItem('animalPhoto', animalPhoto);
+function save(name, data) {
+    localStorage.setItem(name, data);
 }
 
 findOrganizations();
