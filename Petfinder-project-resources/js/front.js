@@ -73,13 +73,6 @@ function findAnimal() {
                 }
             }
             save();
-            
-            /*cards[0][0].setAttribute("value", animalArr[0][0]);
-            cards[0][0].textContent = animalArr[0][1];
-            cards[0][1].textContent = animalArr[0][5] + " / " + animalArr[0][4];
-            cards[0][2].textContent = animalArr[0][3];
-            cards[0][3].textContent = animalArr[0][7];
-            cards[0][4].textContent = animalArr[0][6];*/
 
             for(var i = 0; i < cards.length; i++) {
                 cards[i][0].setAttribute("value", animalArr[i][0]);
