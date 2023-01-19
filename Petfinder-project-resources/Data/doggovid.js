@@ -39,12 +39,13 @@ searchAnimalArr();
 
 
   
-  const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCkEBDbzLyH-LbB2FgMoSMaQ&q=${ Breed + " facts" }&key=AIzaSyCCUVL6CLdcHFE4urCHrNDz_9WqrsJ8LW4&maxResults=1`;
+  const youtubeurl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${ Breed + " facts" }&key=(KEY)&maxResults=1`;
   
-  fetch(url)
+  fetch(youtubeurl)
     .then(response => response.json())
     .then(data => {
-      console.log(data);
+      // if want data in console: //
+      //  console.log(data); //
 
 const resultsContainer = document.getElementById('search-results');
 const videos = data.items;
@@ -63,11 +64,16 @@ videos.forEach(video => {
     
     <p> Video link: https://www.youtube.com/channel/watch?v=${videoId} </p>
   `;
-
-  
-  videoList.appendChild(videoDis);
   videoList.appendChild(videoItem);
+  videoList.appendChild(videoDis);
 resultsContainer.appendChild(videoList);
     })})
 
-});
+    const saveButton = document.getElementById("checkbox1");
+saveButton.addEventListener("change", function(){
+    const currentUrl = window.location.href
+    localStorage.setItem("favorite_"+currentUrl, currentUrl);
+    alert("Saved to favorites");
+  });
+
+  
