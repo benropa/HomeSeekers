@@ -8,6 +8,8 @@ var animalArr=[[]];
 var animalPhoto = [[]];
 var pf = new petfinder.Client({apiKey: key, secret: secretKey});
 
+
+
 const zipInput = document.getElementById('inputZip');
 const zipBtn = document.getElementById('zipBtn');
 const cards = [[document.getElementById('cardOne'), document.getElementById('animalOneName'), document.getElementById('animalOneSpeciesBreed'), 
