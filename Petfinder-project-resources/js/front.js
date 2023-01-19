@@ -45,6 +45,8 @@ function findOrganizations() {
                     orgPhoto[i][2]=resp.data.organizations[i].photos[0].large;
                 }
             }
+            save('orgInfo', orgInfo);
+            save('orgPhoto', orgPhoto);
         });
 }
 
@@ -73,19 +75,13 @@ function findAnimal() {
                     animalPhoto[i][2] = response.data.animals[i].photos[0].large;
                 }
             }
-            save();
-            
-            /*cards[0][0].setAttribute("value", animalArr[0][0]);
-            cards[0][0].textContent = animalArr[0][1];
-            cards[0][1].textContent = animalArr[0][5] + " / " + animalArr[0][4];
-            cards[0][2].textContent = animalArr[0][3];
-            cards[0][3].textContent = animalArr[0][7];
-            cards[0][4].textContent = animalArr[0][6];*/
+            save('animalArr', animalArr);
+            save('animalPhoto', animalPhoto);
 
             for(var i = 0; i < cards.length; i++) {
                 
                 cards[i][0].setAttribute("value", animalArr[i][0]);
-                cards[i][0].setAttribute("style", "background-image: url(" + animalPhoto[i][0] + ");");
+                cards[i][0].setAttribute("style", "background-image: url(" + animalPhoto[i][1] + ");");
                 cards[i][1].textContent = animalArr[i][1];
                 cards[i][2].textContent = animalArr[i][5] + " / " + animalArr[i][4];
                 cards[i][3].textContent = animalArr[i][3];
@@ -99,11 +95,8 @@ function findAnimal() {
         }); 
 }
 
-function save() {
-    localStorage.setItem('orgInfo', orgInfo);
-    localStorage.setItem('orgPhoto', orgPhoto);
-    localStorage.setItem('animalArr', animalArr);
-    localStorage.setItem('animalPhoto', animalPhoto);
+function save(name, data) {
+    localStorage.setItem(name, data);
 }
 
 findOrganizations();
