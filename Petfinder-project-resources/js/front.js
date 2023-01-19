@@ -82,6 +82,7 @@ function findAnimal() {
             cards[0][4].textContent = animalArr[0][6];*/
 
             for(var i = 0; i < cards.length; i++) {
+                
                 cards[i][0].setAttribute("value", animalArr[i][0]);
                 cards[i][0].setAttribute("style", "background-image: url(" + animalPhoto[i][0] + ");");
                 cards[i][1].textContent = animalArr[i][1];
@@ -89,6 +90,7 @@ function findAnimal() {
                 cards[i][3].textContent = animalArr[i][3];
                 cards[i][4].textContent = animalArr[i][7];
                 cards[i][5].textContent = animalArr[i][6];
+ 
             }
         })
         .catch(function (error) {
@@ -122,3 +124,4 @@ $('.boxes').on('click', function(event) {
     var url = './petDisplay.html?animalID=' + event.target.parentElement.attributes.value.nodeValue;
     window.location.href = url;
 });
+
