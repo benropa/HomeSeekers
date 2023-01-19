@@ -3,6 +3,7 @@
 
 // https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyCCUVL6CLdcHFE4urCHrNDz_9WqrsJ8LW4
 
+
 var animalArr;
 var animalPhoto;
 var orgInfo;
@@ -36,6 +37,7 @@ function searchAnimalArr() {
 
 searchAnimalArr();
 
+
   
   const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCkEBDbzLyH-LbB2FgMoSMaQ&q=${ Breed + " facts" }&key=AIzaSyCCUVL6CLdcHFE4urCHrNDz_9WqrsJ8LW4&maxResults=1`;
   
@@ -66,6 +68,6 @@ videos.forEach(video => {
   videoList.appendChild(videoDis);
   videoList.appendChild(videoItem);
 resultsContainer.appendChild(videoList);
+    })})
 
-    })
-  })
+});

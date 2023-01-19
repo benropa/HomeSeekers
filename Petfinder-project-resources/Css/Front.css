@@ -171,13 +171,17 @@ a:active {
     width: 200px;
     height: 200px;
     margin: 15px;
-    color: black;
+    color: rgb(255, 255, 255);
     border-style:solid;
     border: 2px;
     border-color:  rgb(0, 0, 0);
-    font-size: 30px;
-    align-items: flex-end;
-    
+    font-size: 18px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+   /* justify-content: flex-end; */
+    flex-direction: column;
+    align-content: flex-end;
 }
 
 .boxes:hover {
@@ -187,6 +191,8 @@ a:active {
     color: rgb(0, 89, 255);
     cursor: pointer;
 }
+
+/* I'm going to add in features that allow us to style the API information. */
 
 .footer1 {
     background-image: url(../Images/joe-woods-4Zaq5xY5M_c-unsplash.jpg);
