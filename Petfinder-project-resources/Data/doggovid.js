@@ -3,14 +3,41 @@
 
 // https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyCCUVL6CLdcHFE4urCHrNDz_9WqrsJ8LW4
 
-const form = document.getElementById('search-form');
-const input = document.getElementById('search-input');
+
+var animalArr;
+var animalPhoto;
+var orgInfo;
+var orgPhoto;
+var Breed;
+const currentURL = new URL(window.location.toLocaleString()).searchParams;
+const animalID = currentURL.get('animalID');
+
+function load() {
+  animalArr = localStorage.getItem('animalArr').split(',');
+  animalPhoto = localStorage.getItem('animalPhoto').split(',');
+  orgInfo = localStorage.getItem('orgInfo').split(',');
+  orgPhoto = localStorage.getItem('orgPhoto').split(',');
+}
+
+load();
+
+function searchAnimalArr() {
+  for(var i = 0; i < animalArr.length; i+=8) {
+    if(animalID == animalArr[i]) {
+      document.getElementById('cardOneName').setAttribute("style", "background-image: url(" + animalPhoto[8*(i/8)+3*(i/8)-i] + ");");
+      document.getElementById('animalOneName').textContent = animalArr[i+1]; 
+      document.getElementById('animalOneSpeciesBreed').textContent = animalArr[i+5]+ " / " + animalArr[i+4]; 
+      document.getElementById('animalOneGender').textContent = animalArr[i+3]; 
+      document.getElementById('animalOneAge').textContent = animalArr[i+7]; 
+      document.getElementById('animalOneSize').textContent = animalArr[i+6];
+      Breed = animalArr[i+4];
+    }
+  }
+}
+
+searchAnimalArr();
 
 
-form.addEventListener('submit', event => { 
-  
-  event.preventDefault();
-  const Breed = input.value;
   
   const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCkEBDbzLyH-LbB2FgMoSMaQ&q=${ Breed + " facts" }&key=AIzaSyCCUVL6CLdcHFE4urCHrNDz_9WqrsJ8LW4&maxResults=1`;
   
@@ -41,7 +68,6 @@ videos.forEach(video => {
   videoList.appendChild(videoDis);
   videoList.appendChild(videoItem);
 resultsContainer.appendChild(videoList);
-
     })})
 
 });
