@@ -53,7 +53,7 @@
     border-color:  rgb(0, 0, 0);
     font-size: 30px;
     align-items: flex-end;
-    
+    background-repeat: no-repeat;
 }
 
 .boxes:hover {
