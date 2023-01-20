@@ -1,7 +1,7 @@
 var key = 'Qpx9Cdz8eRObJnAZROa9eqV3JYgxfplkHml99RcBeHrf2E2xkD';
 var secretKey = 'NSrjHbC9pfQcTciGAIOIsICgMRtQO3Q4h34XdMIt';
 var url = href="./petDisplay.html?id=";
-var zipCode = 54311;
+var zipCode = 49829;
 var orgInfo = [[]];
 var orgPhoto = [[]];
 var animalArr=[[]];
