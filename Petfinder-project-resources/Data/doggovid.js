@@ -39,7 +39,7 @@ searchAnimalArr();
 
 
   
-  const youtubeurl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${ Breed + " facts" }&key=(KEY)&maxResults=1`;
+  const youtubeurl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${ Breed + " facts" }&key=AIzaSyA3__DzXHvAlgwaD3atdQCE6UZrXhWG1L0&maxResults=1`;
   
   fetch(youtubeurl)
     .then(response => response.json())
@@ -72,7 +72,7 @@ resultsContainer.appendChild(videoList);
     const saveButton = document.getElementById("checkbox1");
 saveButton.addEventListener("change", function(){
     const currentUrl = window.location.href
-    localStorage.setItem("favorite_"+currentUrl, currentUrl);
+    localStorage.setItem("favorites_"+currentUrl, currentUrl);
     alert("Saved to favorites");
   });
 

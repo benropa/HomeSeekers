@@ -1,5 +1,5 @@
-var key = 'Qpx9Cdz8eRObJnAZROa9eqV3JYgxfplkHml99RcBeHrf2E2xkD';
-var secretKey = 'NSrjHbC9pfQcTciGAIOIsICgMRtQO3Q4h34XdMIt';
+var key = 'KZN8TOmSLtguG8hXyBgTU01F6rj11954UM0Sx1hjzhd6oHnOuZ';
+var secretKey = 'NKrrc72Ei7XN16qu08yglF61UcRM0m336rOloEs8';
 var url = href="./petDisplay.html?id=";
 var zipCode = 49829;
 var orgInfo = [[]];
@@ -122,7 +122,7 @@ $('.boxes').on('click', function(event) {
 let favorites = [];
 for(let i=0; i<localStorage.length; i++) {
     let key = localStorage.key(i);
-    if(key.startsWith("favorites-")) {
+    if(key.startsWith("favorites_")) {
         let value = localStorage.getItem(key);
         favorites.push(value);
     }
