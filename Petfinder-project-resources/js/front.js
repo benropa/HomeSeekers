@@ -7,6 +7,7 @@ var orgPhoto = [[]];
 var animalArr=[[]];
 var animalPhoto = [[]];
 var pf = new petfinder.Client({apiKey: key, secret: secretKey});
+var boxes = document.getElementById('boxes')
 
 
 
@@ -118,3 +119,19 @@ $('.boxes').on('click', function(event) {
     window.location.href = url;
 });
 
+let favorites = [];
+for(let i=0; i<localStorage.length; i++) {
+    let key = localStorage.key(i);
+    if(key.startsWith("favorites-")) {
+        let value = localStorage.getItem(key);
+        favorites.push(value);
+    }
+}
+
+const favoritesList = document.getElementById("favorites-list");
+for(let i=0; i<favorites.length; i++) {
+    let link = document.createElement("a");
+    link.href = favorites[i];
+    link.textContent = favorites[i];
+    favoritesList.appendChild(link);
+}
