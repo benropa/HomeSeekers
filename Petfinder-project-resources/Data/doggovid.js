@@ -24,7 +24,7 @@ load();
 function searchAnimalArr() {
   for(var i = 0; i < animalArr.length; i+=8) {
     if(animalID == animalArr[i]) {
-      document.getElementById('cardOneName').setAttribute("style", "background-image: url(" + animalPhoto[8*(i/8)+3*(i/8)-i] + ");");
+      document.getElementById('cardOneName').setAttribute("style", "background-image: url(" + animalPhoto[8*(i/8)+3*(i/8)-i+2] + ");");
       document.getElementById('animalOneName').textContent = animalArr[i+1]; 
       document.getElementById('animalOneSpeciesBreed').textContent = animalArr[i+5]+ " / " + animalArr[i+4]; 
       document.getElementById('animalOneGender').textContent = animalArr[i+3]; 
