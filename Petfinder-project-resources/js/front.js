@@ -7,6 +7,7 @@ var orgPhoto = [[]];
 var animalArr=[[]];
 var animalPhoto = [[]];
 var pf = new petfinder.Client({apiKey: key, secret: secretKey});
+var boxes = document.getElementById('boxes')
 
 
 
@@ -44,6 +45,8 @@ function findOrganizations() {
                     orgPhoto[i][2]=resp.data.organizations[i].photos[0].large;
                 }
             }
+            save('orgInfo', orgInfo);
+            save('orgPhoto', orgPhoto);
         });
 }
 
@@ -72,16 +75,11 @@ function findAnimal() {
                     animalPhoto[i][2] = response.data.animals[i].photos[0].large;
                 }
             }
-            save();
-            
-            /*cards[0][0].setAttribute("value", animalArr[0][0]);
-            cards[0][0].textContent = animalArr[0][1];
-            cards[0][1].textContent = animalArr[0][5] + " / " + animalArr[0][4];
-            cards[0][2].textContent = animalArr[0][3];
-            cards[0][3].textContent = animalArr[0][7];
-            cards[0][4].textContent = animalArr[0][6];*/
+            save('animalArr', animalArr);
+            save('animalPhoto', animalPhoto);
 
             for(var i = 0; i < cards.length; i++) {
+                
                 cards[i][0].setAttribute("value", animalArr[i][0]);
                 cards[i][0].setAttribute("style", "background-image: url(" + animalPhoto[i][1] + ");");
                 cards[i][1].textContent = animalArr[i][1];
@@ -89,6 +87,7 @@ function findAnimal() {
                 cards[i][3].textContent = animalArr[i][3];
                 cards[i][4].textContent = animalArr[i][7];
                 cards[i][5].textContent = animalArr[i][6];
+ 
             }
         })
         .catch(function (error) {
@@ -96,11 +95,8 @@ function findAnimal() {
         }); 
 }
 
-function save() {
-    localStorage.setItem('orgInfo', orgInfo);
-    localStorage.setItem('orgPhoto', orgPhoto);
-    localStorage.setItem('animalArr', animalArr);
-    localStorage.setItem('animalPhoto', animalPhoto);
+function save(name, data) {
+    localStorage.setItem(name, data);
 }
 
 findOrganizations();
@@ -122,3 +118,20 @@ $('.boxes').on('click', function(event) {
     var url = './petDisplay.html?animalID=' + event.target.parentElement.attributes.value.nodeValue;
     window.location.href = url;
 });
+
+let favorites = [];
+for(let i=0; i<localStorage.length; i++) {
+    let key = localStorage.key(i);
+    if(key.startsWith("favorites-")) {
+        let value = localStorage.getItem(key);
+        favorites.push(value);
+    }
+}
+
+const favoritesList = document.getElementById("favorites-list");
+for(let i=0; i<favorites.length; i++) {
+    let link = document.createElement("a");
+    link.href = favorites[i];
+    link.textContent = favorites[i];
+    favoritesList.appendChild(link);
+}

@@ -264,3 +264,12 @@ a:active {
         font-size: 10px;
     }
     }
+
+    #favorites-list {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        background-color: greenyellow;
+        
+    }
