@@ -1,11 +1,9 @@
-# Group5Project
+# HomeSeekers
 
 
 
 ## About
-Welcome to our website application, "Home seekers!" Our mission is to connect loving families with their perfect furry companion. When you load into the site you are presented with a list of pets within your area that have been recently placed for adoption. If you would like to search for more you can enter your zip code for more pets recently put up for adoption in your area.
-well now i want to know about whats near me type in my zipcode please
-so many friends to choose from but lets go back to the original zip code to make sure those pets are still in that area.
+Welcome to our web application, "Home seekers!" Our mission is to connect loving families with their perfect furry companion. Our main page offers the user the ability to search for pets using their zip code. Our page is then populated with the pets most recently added to shelters in the area. When you click on a pet's content square you are then brought to an info page with details on that specific pet, and provided with a youtube video on how to care for that specific breed. 
 
 ok now lets click on one of those furry friends and head into there page.
 
